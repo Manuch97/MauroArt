@@ -4,6 +4,18 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'dalek';
+    src: url('../resources/fonts/DALEK__.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'playfair';
+    src: url('../resources/fonts/PlayfairDisplay-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     background-image: url('../resources/images/maze_background.svg');
@@ -116,12 +128,12 @@ body {
     height: auto;
 }
 .logo span {
-    font-size: 3.5vw;
+    font-size: 2.2vw;
     color: white;
     margin: 0;
     font-weight: lighter;
     white-space: nowrap;
-    font-family: 'corsivofaigouno';
+    font-family: 'playfair';
 }
 
 
@@ -163,7 +175,8 @@ body {
 }
 
 .menu-text {
-    font-size: 1rem;
+    font-family: 'dalek';
+    font-size: 1.2rem;
     color: white;
     visibility: hidden;
 }
@@ -190,7 +203,7 @@ body {
 .content {
     user-select: text;
     position: relative;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'playfair';
 
     width: 96%;
     left: 2%;
