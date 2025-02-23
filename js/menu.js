@@ -28,7 +28,7 @@ function openContent(event) {
         if (funcName == "biografia") {
             setCardCustomBackground();
         }
-    } else console.error("unknown content " + content);
+    } else console.error("unknown content '" + funcName + "'");
 }
 
 function resetContent() {
