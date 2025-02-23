@@ -43,7 +43,7 @@ function resetContent() {
 function setCardCustomBackground() {
     let card = document.getElementsByClassName("rightCard")[0];
 
-    card.style.backgroundImage = "url('../resources/images/athena-cropped.svg')";
+    card.style.backgroundImage = "url('resources/images/athena-cropped.svg')";
     card.style.backgroundSize = "cover";
     card.style.backgroundPosition = "center";
     card.style.backgroundRepeat = "no-repeat";
