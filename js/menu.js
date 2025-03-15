@@ -1,5 +1,4 @@
-var menuItems;
-var rightCard;
+var menuItems, rightCard;
 let openItem = null;
 
 function initMenu() {
@@ -35,11 +34,13 @@ function openContent(event) {
             case "poetica":
                 setPoeticaBackground();
                 changeSymbols(true);
+                showEntraButton(35, 48);
                 break;
             
             case "labyrinthus":
                 setLabyrinthusBackground();
                 changeSymbols(true, true);
+                showEntraButton(10, 46);
                 break;
         }
         
@@ -51,6 +52,11 @@ function resetContent() {
     if (!openItem) return;
     
     openItem.classList.add('d-none');
+    let btn = document.getElementById("entra-btn");
+    if(btn) btn.classList.add('d-none');
+
+    document.getElementById("slide-show").classList.add("d-none");
+
     resetBackGround(openItem);
     changeSymbols(false);
 }
@@ -89,6 +95,14 @@ function changeSymbols(whiteColor, onlyBottom) {
             img.src = newImg;
         }
     });
+}
+
+function showEntraButton(topPercent, leftPercent) {
+    btn = document.getElementById("entra-btn");
+    btn.style.top = topPercent + "%";
+    btn.style.left = leftPercent + "%";
+
+    btn.classList.remove('d-none');
 }
 
 function resetBackGround(openItem) {

@@ -2,6 +2,13 @@ function init() {
     initDedalo();
     initMenu();
     //initMaze();
+
+    // TODO : change
+    document.getElementById("entra-btn").addEventListener("click",
+        () => {
+            document.getElementById("slide-show").classList.remove("d-none");
+        }
+    );
 }
 
 var moved=false,
@@ -50,13 +57,7 @@ function initDedalo() {
                 setTimeout(() => {
                     transitioned = true;
                     transitionDedalo(dedalo.children[0]);
-                }, mouseWaitingMs + 1500),
-            /*
-            "medusaChange":
-                setTimeout(() => {
-                    dedalo.children[0].src = "resources/images/medusa_bianco.svg";
-                }, 5000)
-            */
+                }, mouseWaitingMs + 1500)
         }
     });
 
@@ -67,14 +68,8 @@ function initDedalo() {
             moved = false;
             rotation -= rotationSpeed;
             dedalo.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
-            /*
-            setTimeout(() => {
-                dedalo.children[0].src = "resources/images/gattone-logo.svg";
-            }, 2500);
-            */
            if (transitioned) {
                 setTimeout(() => {
-                    //dedalo.children[0].src = "resources/images/gattone-logo.svg";
                     transitionDedalo(dedalo.children[0]);
                 }, 800);
                 transitioned = false;

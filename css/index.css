@@ -146,6 +146,7 @@ a {
 
 /* --- Menu gatti --- */
 .menu {
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: calc(2vh + 0.2vw);
@@ -224,6 +225,19 @@ a {
     background-color: white;
 }
 
+#entra-btn {
+    background-color: white;
+    font-family: 'playfair';
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    position: relative;
+    font-size: calc(var(--bs-body-font-size) * 1.2);
+}
+#entra-btn:hover {
+    transform: scale(1.2);
+}
+
 #biografia-content {
     /*
     max-width: calc(52vh + 2vw);
@@ -246,4 +260,33 @@ a {
     border-radius: 8px;
     border: 2px solid black;
     padding: 5px;
+}
+
+/** slideshow **/
+#slide-show {
+    z-index: 1;
+    background-color: white;
+    height: 55%;
+    width: 30%;
+    bottom: 4rem;
+    left: 9vw;
+}
+
+#slide-show .slide-img {
+    border: 1px solid black;
+    width: 40%;
+    height: 10%;
+    box-sizing: border-box;
+}
+
+#slide-show .slide-arrow {
+    border: 1px solid black;
+    width: 40%;
+    height: 20%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#slide-show .slide-arrow img {
+    max-width: 100%;
 }
