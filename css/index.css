@@ -25,6 +25,11 @@ body {
     user-select: none;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .redBg {
     background-color: red;
 }
@@ -38,6 +43,7 @@ body {
 }
 .rightCard {
     background-color: white;
+    overflow: auto;
 }
 .bottom {
     bottom: 0vh;
@@ -231,4 +237,13 @@ body {
     left: 40%;
     border-radius: 8px;
     border: 2px solid black;
+    padding: 5px;
+}
+
+#labyrinthus-content {
+    max-width: calc(5vh + 20vw);
+    left: 40%;
+    border-radius: 8px;
+    border: 2px solid black;
+    padding: 5px;
 }

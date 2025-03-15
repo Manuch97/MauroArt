@@ -36,6 +36,11 @@ function openContent(event) {
                 setPoeticaBackground();
                 changeSymbols(true);
                 break;
+            
+            case "labyrinthus":
+                setLabyrinthusBackground();
+                changeSymbols(true, true);
+                break;
         }
         
     } else console.error("unknown content '" + funcName + "'");
@@ -53,10 +58,9 @@ function resetContent() {
 
 function setBioBackground() {
     rightCard.style.backgroundImage = "url('resources/images/athena-cropped.svg')";
-    rightCard.style.backgroundSize = "cover";
+    rightCard.style.backgroundSize= "70vh auto"
     rightCard.style.backgroundPosition = "center";
     rightCard.style.backgroundRepeat = "no-repeat";
-    rightCard.style.backgroundSize= "70vh auto"
     rightCard.style.backgroundPosition = "left bottom";
 }
 
@@ -65,17 +69,25 @@ function setPoeticaBackground() {
     rightCard.style.backgroundSize = "cover";
     rightCard.style.backgroundPosition = "center";
     rightCard.style.backgroundRepeat = "no-repeat";
-    //rightCard.style.backgroundSize= "100%"
     rightCard.style.backgroundPosition = "left bottom";
 }
 
-function changeSymbols(whiteColor) {
+function setLabyrinthusBackground() {
+    rightCard.style.backgroundImage = "url('resources/images/Labirynthus.svg')";
+    rightCard.style.backgroundSize = "cover";
+    rightCard.style.backgroundPosition = "center";
+    rightCard.style.backgroundRepeat = "no-repeat";
+    rightCard.style.backgroundPosition = "left bottom";
+}
+
+function changeSymbols(whiteColor, onlyBottom) {
     symbols = rightCard.getElementsByClassName("symbol");
     let newImg = whiteColor ? "resources/images/luna.svg" : "resources/images/luna_2.svg";
     Array.from(symbols).forEach(item => {
-        img = item.getElementsByTagName("img")[0];
-        
-        img.src = newImg;
+        if (!onlyBottom || item.classList.contains('bottomSymbol')) {
+            img = item.getElementsByTagName("img")[0];
+            img.src = newImg;
+        }
     });
 }
 
