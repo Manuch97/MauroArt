@@ -206,8 +206,7 @@ body {
     font-family: 'playfair';
 
     width: 96%;
-    left: 2%;
-    height: 90%;
+    height: auto;
     top: 5%;
 
 
@@ -215,6 +214,8 @@ body {
 
     overflow-y: hidden;
     overflow-x: hidden;
+    font-size: calc(0.5vh + 0.5vw);
+    background-color: white;
 }
 
 #biografia-content {
@@ -223,5 +224,11 @@ body {
     */
     max-width: calc(5vh + 20vw);
     margin-left: calc(5vh + 10vw);
-    font-size: calc(0.5vh + 0.5vw);
+}
+
+#poetica-content {
+    max-width: calc(5vh + 20vw);
+    left: 40%;
+    border-radius: 8px;
+    border: 2px solid black;
 }

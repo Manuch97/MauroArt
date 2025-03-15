@@ -36,6 +36,7 @@ function initDedalo() {
     dedalo.addEventListener('mouseover', () => {
         clearHoverTimeout();
 
+        let mouseWaitingMs = 45 * 1000;
         hoverTimeout = 
         {
             "initRotation":
@@ -44,12 +45,12 @@ function initDedalo() {
                     rotation += rotationSpeed;
                     dedalo.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
                     document.body.style.cursor = "url('resources/images/gattone-logo.svg'), auto";
-                }, 2500),
+                }, mouseWaitingMs),
             "startTransition":
                 setTimeout(() => {
                     transitioned = true;
                     transitionDedalo(dedalo.children[0]);
-                }, 4000),
+                }, mouseWaitingMs + 1500),
             /*
             "medusaChange":
                 setTimeout(() => {
