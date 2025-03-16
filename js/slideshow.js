@@ -39,7 +39,7 @@ class Slideshow {
     }
 
     nextPhoto() {
-        if (!this.photoUrls) return;
+        if (!this.photoUrls || this.slideElement.classList.contains("d-none")) return;
         
         if (this.selectedDivIndex + 1 < this.slideElementImg.length) {
             this.selectedDivIndex ++;
@@ -57,11 +57,11 @@ class Slideshow {
                }
             }
         }
-        this.showPhoto(this.selectedDivIndex);
+        this.showPhoto();
     }
 
     previousPhoto() {
-        if (!this.photoUrls) return;
+        if (!this.photoUrls || this.slideElement.classList.contains("d-none")) return;
         
         if (this.selectedDivIndex > 0) {
             this.selectedDivIndex --;
@@ -80,14 +80,16 @@ class Slideshow {
                 }
             }
         }
-        this.showPhoto(this.selectedDivIndex);
+        this.showPhoto();
     }
 
     showPhoto(selectedDiv) {
-        if (typeof selectedDiv == 'number') selectedDiv = this.slideElementImg[selectedDiv];
-
-        this.slideDisplayContent.style.backgroundImage = selectedDiv.style.backgroundImage;
         this.removeAllSelected();
+
+        if (!selectedDiv) selectedDiv = this.selectedDivIndex;
+        if (typeof selectedDiv == 'number') selectedDiv = this.slideElementImg[selectedDiv];
+        
+        this.slideDisplayContent.style.backgroundImage = selectedDiv.style.backgroundImage;
         selectedDiv.style.border = "3px solid yellow";
     }
 
