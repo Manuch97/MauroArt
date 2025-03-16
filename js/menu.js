@@ -3,7 +3,7 @@ let openItem = null;
 
 function initMenu() {
     menuItems = document.getElementsByClassName("menu-item");
-    rightCard = document.getElementsByClassName("rightCard")[0];
+    rightCard = document.getElementById("rightCard");
 
     Array.from(menuItems).forEach(item => {
         img = item.getElementsByTagName("img")[0];

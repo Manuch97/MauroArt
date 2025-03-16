@@ -7,13 +7,7 @@ function init() {
     //initMaze();
 
     // TODO : change
-    document.getElementById("entra-btn").addEventListener("click",
-        () => {
-            resetContent(true);
-            document.getElementById("slide-show").classList.remove("d-none");
-            document.getElementById("slide-display").classList.remove("d-none");
-        }
-    );
+    document.getElementById("entra-btn").addEventListener("click", handleEntraBtn);
 }
 
 var moved=false,
@@ -91,4 +85,14 @@ function initSlideShow() {
         slideEl.getElementsByClassName("slide-prev")[0].addEventListener("click", ()=> { slideShowInstance.previousPhoto(); });
         slideEl.getElementsByClassName("slide-next")[0].addEventListener("click", ()=> { slideShowInstance.nextPhoto(); });
     }
+}
+
+function handleEntraBtn() {
+    resetContent(true);
+    document.getElementById("slide-show").classList.remove("d-none");
+    document.getElementById("slide-display").classList.remove("d-none");
+
+    let rightSymbols = document.getElementById("rightCard").getElementsByClassName("symbol");
+    for(let i=0; i<rightSymbols.length; i++)
+        rightSymbols[i].children[0].src = "resources/images/luna.svg";
 }

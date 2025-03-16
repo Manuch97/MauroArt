@@ -38,10 +38,10 @@ a {
     height: 100vh;
 }
 
-.leftCard {
+#leftCard {
     background-color: black;
 }
-.rightCard {
+#rightCard {
     background-color: white;
     overflow: auto;
 }
@@ -68,6 +68,10 @@ a {
 
 .bottomSymbol img {
     transform: scaleY(-1) scaleX(-1);
+}
+
+.symbol {
+    z-index: 1;
 }
 
 .symbol img:hover {
