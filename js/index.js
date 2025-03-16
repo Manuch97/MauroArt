@@ -1,12 +1,17 @@
+var slideShowInstance;
+
 function init() {
     initDedalo();
     initMenu();
+    initSlideShow();
     //initMaze();
 
     // TODO : change
     document.getElementById("entra-btn").addEventListener("click",
         () => {
+            resetContent(true);
             document.getElementById("slide-show").classList.remove("d-none");
+            document.getElementById("slide-display").classList.remove("d-none");
         }
     );
 }
@@ -77,4 +82,13 @@ function initDedalo() {
             setTimeout(() => { document.body.style.cursor = "default"; }, 1000);
         }
     });
+}
+
+function initSlideShow() {
+    slideShowInstance = new Slideshow();
+    let slideEl = document.getElementById("slide-show");
+    if (slideEl) {
+        slideEl.getElementsByClassName("slide-prev")[0].addEventListener("click", ()=> { slideShowInstance.previousPhoto(); });
+        slideEl.getElementsByClassName("slide-next")[0].addEventListener("click", ()=> { slideShowInstance.nextPhoto(); });
+    }
 }

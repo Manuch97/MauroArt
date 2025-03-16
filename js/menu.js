@@ -14,6 +14,21 @@ function initMenu() {
 }
 
 function openContent(event) {
+    let poeticaUrls     = [
+        "resources/images/opere/360_F_48417977_p5P75ihoMUCbjNbTXb638dEvAFjBwY1b.jpg",
+        "resources/images/opere/29155128-panorama-di-bellissimo-alba-al-di-sopra-di-lago-foto.jpg",
+        "resources/images/opere/Panorama-580.jpg",
+        "resources/images/opere/panorama-al-tramonto-sulla-spiaggia_43605-106.avif",
+        "resources/images/opere/Perche-un-panorama-ci-colpisce-scaled.jpg",
+    ],
+    labyrinthusUrls = [
+        "resources/images/labyrinthus/81dxjiYexOL.jpg",
+        "resources/images/labyrinthus/graphic-art-photo.jpg",
+        "resources/images/labyrinthus/pexels-misael-garcia-832776-1707820.jpg",
+        "resources/images/labyrinthus/pexels-photo-1590549.jpeg",
+        "resources/images/labyrinthus/pngtree-a-two-lane-road-through-blackwater-falls-state-park-during-autumn-photo-image_3019985.jpg"
+    ];
+
     resetContent();
 
     document.getElementById("dedalo_cat").style.clipPath = "inset(0% 50% 0% 0%)";
@@ -35,20 +50,24 @@ function openContent(event) {
                 setPoeticaBackground();
                 changeSymbols(true);
                 showEntraButton(35, 48);
+                slideShowInstance.setPhotos(poeticaUrls);
                 break;
             
             case "labyrinthus":
                 setLabyrinthusBackground();
                 changeSymbols(true, true);
                 showEntraButton(10, 46);
+                slideShowInstance.setPhotos(labyrinthusUrls);
                 break;
         }
         
     } else console.error("unknown content '" + funcName + "'");
 }
 
-function resetContent() {
-    document.getElementById("dedalo_cat").style.clipPath = "inset(0% 0% 0% 0%)";
+function resetContent(ignoreDedalo) {
+    if (typeof ignoreDedalo != "boolean" || !ignoreDedalo)
+        document.getElementById("dedalo_cat").style.clipPath = "inset(0% 0% 0% 0%)";
+
     if (!openItem) return;
     
     openItem.classList.add('d-none');
@@ -56,6 +75,7 @@ function resetContent() {
     if(btn) btn.classList.add('d-none');
 
     document.getElementById("slide-show").classList.add("d-none");
+    document.getElementById("slide-display").classList.add("d-none");
 
     resetBackGround(openItem);
     changeSymbols(false);
