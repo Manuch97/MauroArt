@@ -1,15 +1,18 @@
 var initialized = false;
-var scene, camera, renderer;
+var scene, camera, renderer, controls;
+var sp = {x: -228, y: 57, z: -71}
 
 function showThree(container) {
     if (!initialized) {
         initialized = true;
         initThreeJS(container);
+    } else {
+        camera.position.set(sp.x, sp.y, sp.z);
     }
 }
 
 function initThreeJS(container) {
-    let mixer, controls;
+    let mixer;
     init(container);
     animate();
 
@@ -21,7 +24,7 @@ function initThreeJS(container) {
 
         // Set up the camera
         camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-        camera.position.set(-228, 57, -71);
+        camera.position.set(sp.x, sp.y, sp.z);
 
         // Set up the renderer
         renderer = new THREE.WebGLRenderer({
@@ -43,6 +46,8 @@ function initThreeJS(container) {
         // Orbit controls
         controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enablePan = true;
+        controls.minDistance = 120;
+        controls.maxDistance = 900;
 
         const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load('/resources/models/serene_cat/Serene_Stone_Cat_texture.png', function (texture) {
