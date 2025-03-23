@@ -49,7 +49,9 @@ function initThreeJS(container) {
         controls.minDistance = 120;
         controls.maxDistance = 900;
         controls.mouseButtons.RIGHT = null;
-        
+
+        const loadingEl = document.getElementById("loading");
+        loadingEl.classList.remove("d-none");
         const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load('resources/models/serene_cat/Serene_Stone_Cat_texture.png', function (texture) {
             console.log('Texture loaded:', texture);
@@ -68,10 +70,11 @@ function initThreeJS(container) {
             });
             scene.add(object);
             mixer = new THREE.AnimationMixer(object);
+            loadingEl.classList.add("d-none");
         }, undefined, function (error) {
+            loadingEl.classList.add("d-none");
             console.error(error);
         });
-
         // Handle window resize
         window.addEventListener('resize', onWindowResize, false);
     }
