@@ -48,7 +48,8 @@ function initThreeJS(container) {
         controls.enablePan = true;
         controls.minDistance = 120;
         controls.maxDistance = 900;
-
+        controls.mouseButtons.RIGHT = null;
+        
         const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load('resources/models/serene_cat/Serene_Stone_Cat_texture.png', function (texture) {
             console.log('Texture loaded:', texture);
