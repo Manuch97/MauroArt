@@ -50,7 +50,7 @@ function initThreeJS(container) {
         controls.maxDistance = 900;
 
         const textureLoader = new THREE.TextureLoader();
-        const texture = textureLoader.load('/resources/models/serene_cat/Serene_Stone_Cat_texture.png', function (texture) {
+        const texture = textureLoader.load('resources/models/serene_cat/Serene_Stone_Cat_texture.png', function (texture) {
             console.log('Texture loaded:', texture);
         }, undefined, function (error) {
             console.error('Error loading texture:', error);
@@ -58,7 +58,7 @@ function initThreeJS(container) {
 
         // Load the FBX model
         const loader = new THREE.FBXLoader();
-        loader.load('/resources/models/serene_cat/Serene_Stone_Cat.fbx', function (object) {
+        loader.load('resources/models/serene_cat/Serene_Stone_Cat.fbx', function (object) {
             object.traverse(function (child) {
                 if (child.isMesh) {
                     child.material.map = texture; // Apply the texture to the material
