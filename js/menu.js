@@ -59,6 +59,10 @@ function openContent(event) {
                 showEntraButton(10, 46);
                 slideShowInstance.setPhotos(labyrinthusUrls);
                 break;
+            
+            case "gatti":
+                showThree(contentEl);
+                break;
         }
         
     } else console.error("unknown content '" + funcName + "'");

@@ -16,6 +16,11 @@
     <script src="js/menu.js"></script>
     <script src="js/slideshow.js"></script>
     <script src="js/cats.js"></script>
+    <script src="js/threeIndex.js"></script>
+    <script src="lib/three.min.js"></script>
+    <script src="lib/OrbitControls.min.js"></script>
+    <script src="lib/fflate.min.js"></script>
+    <script src="lib/FBXLoader.js"></script>
 </head>
 
 <body onload="init()">
@@ -55,7 +60,7 @@
                             <span class="menu-text">Labyrinthus</span>
                         </div>
                         <div class="menu-item">
-                            <img id="video-menu" src="resources/images/gatto-labirinto.svg" alt="video">
+                            <img id="gatti-menu" src="resources/images/gatto-labirinto.svg" alt="eudaimonia">
                             <span class="menu-text">Eudaimonia</span>
                         </div>
                     </div>
@@ -125,6 +130,9 @@
                         centro della costruzione, mostrandoci la via che ci permette di avvicinarci a una più profonda consapevolezza della nostra parte
                         più recondita, della nostra Ombra. Un processo continuo e infinito che non è più trappola letale ma strumento a disposizione
                         dell'individuo per ridefinire continuamente se stesso.
+                    </div>
+                    <div class="content d-none justify-content-end" id="gatti-content">
+
                     </div>
                     <div class="d-none" id="entra-btn">
                         . . . . . . . . . . . . .<br>
